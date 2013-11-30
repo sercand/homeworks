@@ -1,3 +1,5 @@
+#Created by Sercan Değirmenci on 29.11.1013
+
 from math import sqrt, fabs
 
 def getX(vector):
