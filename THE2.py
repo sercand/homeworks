@@ -14,53 +14,33 @@ def getSlope(v1, v2):
 def length(v1,v2):
     return sqrt((getX(v1)-getX(v2))**2 + (getY(v1)-getY(v2))**2)
 
-def det(p, q, r):
-    sum1 = q[0]*r[1] + p[0]*q[1] + r[0]*p[1]
-    sum2 = q[0]*p[1] + r[0]*q[1] + p[0]*r[1]
-    return sum1 - sum2
+TURN_RIGHT, TURN_NONE = ( -1, 0)
 
-def isRightTurn((p, q, r)):
-    assert p != q and q != r and p != r
-    if det(p, q, r) < 0:
-        return 1
-    else:
-        return 0
+def turn(p, q, r):
+    return cmp((q[0] - p[0])*(r[1] - p[1]) - (r[0] - p[0])*(q[1] - p[1]), 0)
 
-def to_right(v1, v2):
-    return (v1[0]*v2[1] - v1[1]*v2[0]) < 0
+def _dist(p, q):
+    dx, dy = q[0] - p[0], q[1] - p[1]
+    return dx * dx + dy * dy
 
-def inPoly(p,poly):
-    for i in range(len(poly)):
-        v1 = poly[i-1]
-        v2 = poly[i]
-        if(to_right([v2[0]-v1[0],v2[1]-v1[1]], [p[0]-v1[0],p[1]-v1[1]])):
-              return 1
-    return 0
+def _next_hull_pt(points, p):
+    q = p
+    for r in points:
+        t = turn(p, q, r)
+        if t == TURN_RIGHT or t == TURN_NONE and _dist(p, r) > _dist(p, q):
+            q = r
+    return q
+
+def convex_hull(points):#http://tomswitzer.net/2009/12/jarvis-march/
+    hull = [min(points)]
+    for p in hull:
+        q = _next_hull_pt(points, p)
+        if q != hull[0]:
+            hull.append(q)
+    return hull
 
 def isConcave(P):
-    points = map(None, P)
-    points.sort()
-    upper = [points[0], points[1]]
-    for p in points[2:]:
-        upper.append(p)
-    while len(upper) > 2 and not isRightTurn(upper[-3:]):
-        del upper[-2]
-
-    points.reverse()
-    lower = [points[0], points[1]]
-    for p in points[2:]:
-        lower.append(p)
-        while len(lower) > 2 and not isRightTurn(lower[-3:]):
-            del lower[-2]
-
-    del lower[0]
-    del lower[-1]
-    for x in upper:
-        if x==lower[-1]:
-            del lower[-1]
-            break
-    t = tuple(upper + lower)
-    print(t)
+    t = convex_hull(P)
     return len(t) != len(P)
 
 def isPerpendicular(v1,v2,v3):#http://paulbourke.net/geometry/circlesphere/
@@ -105,6 +85,22 @@ def calcCircle(v1,v2,v3):#http://paulbourke.net/geometry/circlesphere/
     radius= length([mx,my],v1)
     return [mx,my,radius]
 
+def otherIndexes(a,b,array):
+    x = range(0,len(array))
+    x.remove(a)
+    x.remove(b)
+    return x
+
+def hasTwoParallel(array):
+    for i in range(len(array)):
+        for j in range(i + 1 ,len(array)):
+            m1 = getSlope(array[i],array[j])
+            others = otherIndexes(i , j,array)
+            m2 = getSlope(array[others[0]], array[others[1]])
+            if(compareNumbers(m1,m2)):
+                return True
+    return False
+
 def checkLine(array, n=0):
     m = getSlope(array[0], array[1])
     for i in range(1,len(array)-1):
@@ -133,22 +129,6 @@ def checkCircle(array):
     radius = length(array[3],circle)
     return compareNumbers(radius,circle[2])
 
-def otherIndexes(a,b,array):
-    x = range(0,len(array))
-    x.remove(a)
-    x.remove(b)
-    return x
-
-def hasTwoParallel(array):
-    for i in range(len(array)):
-        for j in range(i + 1 ,len(array)):
-            m1 = getSlope(array[i],array[j])
-            others = otherIndexes(i , j,array)
-            m2 = getSlope(array[others[0]], array[others[1]])
-            if(compareNumbers(m1,m2)):
-                return True
-    return False
-
 def checkTriangle(array):
     return not hasTwoParallel(array)
 
@@ -169,3 +149,4 @@ print geo_wizard([[0.0,0.0],[1.0,1.0],[2.0,2.0],[3.0,3.0]])
 print geo_wizard([[0, 1.5],[0.7,2.0],[2.0,1.6],[1,1]])
 print geo_wizard([[0.0, 1.0], [1.0, 3.0], [2.0, 1.0], [1.0, 0.0]])
 print geo_wizard([[0.0, 6.0], [3.0, 9.0], [9.0, 3.0], [6.0, 0.0]])
+print geo_wizard([[0.0, 6.0], [3.0, 9.0], [9.0, 3.0], [3.0, 6.0]])
