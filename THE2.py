@@ -6,7 +6,7 @@ def getX(vector):
 def getY(vector):
     return vector[1]
 def compareNumbers(n1,n2):
-    return abs((n1-n2)/(n1+n2+0.0000000001)) <= 0.0001
+    return abs(n1-n2) <= 0.0001
 
 def getSlope(v1, v2):
     return (getY(v1) - getY(v2)) / (getX(v1) - getX(v2)+0.000000001)#Slope= y1-y2 / x1-x2
@@ -25,17 +25,6 @@ def isRightTurn((p, q, r)):
         return 1
     else:
         return 0
-
-def isPointInPolygon(r, P):
-    for x in P:
-        if x == r:
-            return 0
-
-    for i in xrange(len(P[:-1])):
-        p, q = P[i], P[i+1]
-        if not isRightTurn((p, q, r)):
-            return 0
-    return 1
 
 def to_right(v1, v2):
     return (v1[0]*v2[1] - v1[1]*v2[0]) < 0
@@ -66,7 +55,11 @@ def isConcave(P):
 
     del lower[0]
     del lower[-1]
-    t= tuple(upper + lower)
+    for x in upper:
+        if x==lower[-1]:
+            del lower[-1]
+            break
+    t = tuple(upper + lower)
     print(t)
     return len(t) != len(P)
 
@@ -121,7 +114,7 @@ def checkLine(array, n=0):
 
 def checkCircle(array):
     circle = -1
-    if (not isPerpendicular(array[0], array[1], array[2]) ):
+    if (not isPerpendicular(array[0], array[1], array[2])):
         circle = calcCircle(array[0], array[1], array[2])
     elif (not isPerpendicular(array[0], array[2], array[1])):
         circle = calcCircle(array[0], array[2], array[1])
@@ -166,12 +159,13 @@ def checkRectangle(array):
 def geo_wizard(array):
     if checkLine(array):return 'line'
     elif checkCircle(array):return 'circle'
-    elif isConcave(array):return 'arbitraryquadrilateral0000000'
+    elif isConcave(array):return 'arbitraryquadrilateral'
     elif checkTriangle(array):return 'triangle'
     elif checkRectangle(array):return 'rectangle'
     return 'arbitraryquadrilateral'
 
 print geo_wizard([[1.75,-1.918698582794336],[3.1,4.948187929913334],[0.5,4.372281323269014],[5.5,-0.30277563773199456]])
 print geo_wizard([[0.0,0.0],[1.0,1.0],[2.0,2.0],[3.0,3.0]])
-print geo_wizard([[0 , 1.5],[0.7,2.0],[2.0,1.6],[1,1]])
-print geo_wizard([[0 , 1] , [1,2.0] , [2.0 , 1] , [1,0]])
+print geo_wizard([[0, 1.5],[0.7,2.0],[2.0,1.6],[1,1]])
+print geo_wizard([[0.0, 1.0], [1.0, 3.0], [2.0, 1.0], [1.0, 0.0]])
+print geo_wizard([[0.0, 6.0], [3.0, 9.0], [9.0, 3.0], [6.0, 0.0]])
