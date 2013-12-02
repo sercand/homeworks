@@ -91,16 +91,6 @@ def otherIndexes(a,b,array):
     x.remove(b)
     return x
 
-def hasTwoParallel(array):
-    for i in range(len(array)):
-        for j in range(i + 1 ,len(array)):
-            m1 = getSlope(array[i],array[j])
-            others = otherIndexes(i , j,array)
-            m2 = getSlope(array[others[0]], array[others[1]])
-            if(compareNumbers(m1,m2)):
-                return True
-    return False
-
 def checkLine(array, n=0):
     m = getSlope(array[0], array[1])
     for i in range(1,len(array)-1):
@@ -129,24 +119,8 @@ def checkCircle(array):
     radius = length(array[3],circle)
     return compareNumbers(radius,circle[2])
 
-def checkTriangle(array):
-    return not hasTwoParallel(array)
-
-
-def checkRectangle(array):
-    return hasTwoParallel(array)
-
 def geo_wizard(array):
     if checkLine(array):return 'line'
     elif checkCircle(array):return 'circle'
     elif isConcave(array):return 'arbitraryquadrilateral'
-    elif checkTriangle(array):return 'triangle'
-    elif checkRectangle(array):return 'rectangle'
-    return 'arbitraryquadrilateral'
-
-print geo_wizard([[1.75,-1.918698582794336],[3.1,4.948187929913334],[0.5,4.372281323269014],[5.5,-0.30277563773199456]])
-print geo_wizard([[0.0,0.0],[1.0,1.0],[2.0,2.0],[3.0,3.0]])
-print geo_wizard([[0, 1.5],[0.7,2.0],[2.0,1.6],[1,1]])
-print geo_wizard([[0.0, 1.0], [1.0, 3.0], [2.0, 1.0], [1.0, 0.0]])
-print geo_wizard([[0.0, 6.0], [3.0, 9.0], [9.0, 3.0], [6.0, 0.0]])
-print geo_wizard([[0.0, 6.0], [3.0, 9.0], [9.0, 3.0], [3.0, 6.0]])
+    else: return 'triangle'
