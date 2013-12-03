@@ -31,7 +31,7 @@ def _next_hull_pt(points, p):
             q = r
     return q
 
-def convex_hull(points):#http://tomswitzer.net/2009/12/jarvis-march/
+def convex_hull(points):#http://en.wikipedia.org/wiki/Gift_wrapping_algorithm
     hull = [min(points)]
     for p in hull:
         q = _next_hull_pt(points, p)
@@ -85,12 +85,6 @@ def calcCircle(v1,v2,v3):#http://paulbourke.net/geometry/circlesphere/
     radius= length([mx,my],v1)
     return [mx,my,radius]
 
-def otherIndexes(a,b,array):
-    x = range(0,len(array))
-    x.remove(a)
-    x.remove(b)
-    return x
-
 def checkLine(array, n=0):
     m = getSlope(array[0], array[1])
     for i in range(1,len(array)-1):
@@ -116,8 +110,11 @@ def checkCircle(array):
         return False
     if circle==-1 :
         return False
-    radius = length(array[3],circle)
-    return compareNumbers(radius,circle[2])
+    for i in range(3,len(array)):
+        radius = length(array[i],circle)
+        if compareNumbers(radius,circle[2])==False:
+            return False
+    return True
 
 def geo_wizard(array):
     if checkLine(array):return 'line'
