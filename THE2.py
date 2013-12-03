@@ -39,9 +39,9 @@ def convex_hull(points):#http://en.wikipedia.org/wiki/Gift_wrapping_algorithm
             hull.append(q)
     return hull
 
-def isConcave(P):
+def isConvex(P):
     t = convex_hull(P)
-    return len(t) != len(P)
+    return len(t) == len(P)
 
 def isPerpendicular(v1,v2,v3):#http://paulbourke.net/geometry/circlesphere/
     yDelta_a = getY(v2) - getY(v1)
@@ -119,5 +119,5 @@ def checkCircle(array):
 def geo_wizard(array):
     if checkLine(array):return 'line'
     elif checkCircle(array):return 'circle'
-    elif isConcave(array):return 'arbitraryquadrilateral'
-    else: return 'triangle'
+    elif isConvex(array):return 'triangle'
+    else: return 'arbitraryquadrilateral'
