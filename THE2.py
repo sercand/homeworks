@@ -7,7 +7,7 @@ def getX(vector):
 def getY(vector):
     return vector[1]
 
-def compareNumbers(n1,n2):
+def compareNumbers(n1, n2):
     return abs(n1-n2) <= 0.0001
 
 def getSlope(v1, v2):
@@ -44,13 +44,7 @@ def is_perpendicular(v1,v2,v3):#http://paulbourke.net/geometry/circlesphere/
     xDelta_b = getX(v3) - getX(v2)
     if fabs(xDelta_a) <= 0.000000001 and fabs(yDelta_b) <= 0.000000001:
         return False
-    if fabs(yDelta_a) <= 0.0000001:
-        return True
-    elif fabs(yDelta_b) <= 0.0000001:
-        return True
-    elif fabs(xDelta_a)<= 0.000000001:
-        return True
-    elif fabs(xDelta_b)<= 0.000000001:
+    if abs(yDelta_a)<=0.0000001 or abs(yDelta_b)<=0.0000001 or abs(xDelta_a)<=0.000000001 or abs(xDelta_b)<=0.000000001:
         return True
     else:
         return False
@@ -107,7 +101,7 @@ def check_circle(array):
     return True
 
 def geo_wizard(array):
-    if check_line(array):return 'line'
-    elif check_circle(array):return 'circle'
-    elif is_convex(array):return 'triangle'
+    if check_line(array): return 'line'
+    elif check_circle(array): return 'circle'
+    elif is_convex(array): return 'triangle'
     else: return 'arbitraryquadrilateral'
