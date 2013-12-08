@@ -2,8 +2,7 @@
 from math import sqrt, fabs
 
 def compare_numbers(n1, n2): # check for two numbers if they are equal
-    if float("inf") == n1 and float("inf") == n2: return True
-    return abs(n1-n2) <= 0.0001
+    return (float("inf") == n1 and float("inf") == n2) or (fabs(n1-n2) <= 0.0001)
 
 def slope(v1, v2): #get the slope of a line
     if fabs(v1[0] - v2[0]) <= 0.000001: return float("inf")  #if delta x is zero, slope is infinite
@@ -30,14 +29,8 @@ def convex_hull(points):#get the convex ccw polygon from given points
     return l.extend(u[i] for i in xrange(1, len(u) - 1)) or l
 
 def calc_circle(v1,v2,v3):#calculate a circle from 3 points
-    yDelta_a ,xDelta_a= v2[1] - v1[1], v2[0] - v1[0]
-    yDelta_b ,xDelta_b  = v3[1] - v2[1], v3[0] - v2[0]
-    if fabs(xDelta_a) <= 0.000000001 and fabs(yDelta_b) <= 0.000000001:
-        mx = 0.5*(v2[0] + v3[0])
-        my = 0.5*(v1[1] + v2[1])
-        return [mx,my, length([mx,my],v1)] #returns x of center, y of center and radius of circle
-    aSlope = yDelta_a/(xDelta_a + 0.000000001)
-    bSlope = yDelta_b/(xDelta_b + 0.000000001)
+    aSlope = (v2[1] - v1[1])/(v2[0] - v1[0] + 0.000000001)
+    bSlope = (v3[1] - v2[1])/(v3[0] - v2[0] + 0.000000001)
     if fabs(aSlope-bSlope) <= 0.000000001: return -1 #points are in same line
     mx = (aSlope * bSlope * (v1[1] - v3[1]) + bSlope*(v1[0] + v2[0]) -
           aSlope * (v2[0] + v3[0])) / (2 * (bSlope - aSlope))
