@@ -29,8 +29,20 @@
       <file leaf-file-name="THE2.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/THE2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="13" selection-start="2619" selection-end="2619" vertical-scroll-proportion="0.5461422" vertical-offset="1239" max-vertical-offset="1900">
+            <state line="78" column="10" selection-start="2995" selection-end="2995" vertical-scroll-proportion="0.5180723" vertical-offset="1216" max-vertical-offset="1880">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theTester.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theTester.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="10" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
+              <folding>
+                <marker date="1386502361471" expanded="true" signature="27:118" placeholder="..." />
+                <marker date="1386502361471" expanded="true" signature="135:147" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,6 +66,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/convex_hull.py" />
+        <option value="$PROJECT_DIR$/theTester.py" />
         <option value="$PROJECT_DIR$/THE2.py" />
       </list>
     </option>
@@ -90,7 +103,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -111,6 +123,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -155,6 +168,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="the2" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/convex_hull.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="theTester" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="the2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/theTester.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -281,14 +312,16 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.THE2" />
       <item index="1" class="java.lang.String" itemvalue="Python.convex_hull" />
+      <item index="2" class="java.lang.String" itemvalue="Python.theTester" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.THE2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.convex_hull" />
+        <item index="1" class="java.lang.String" itemvalue="Python.theTester" />
+        <item index="2" class="java.lang.String" itemvalue="Python.convex_hull" />
       </list>
     </recent_temporary>
   </component>
@@ -320,17 +353,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09172378" sideWeight="0.7794118" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09172378" sideWeight="0.7810384" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22058824" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21896163" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -355,6 +388,41 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/THE2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="45" selection-start="3120" selection-end="3120" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1820">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/THE2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="25" selection-start="3059" selection-end="3059" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/THE2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="27" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1920">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/THE2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="2636" selection-end="2636" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="1900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/THE2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="20" selection-start="1417" selection-end="1417" vertical-scroll-proportion="0.0" vertical-offset="1239" max-vertical-offset="1900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/THE2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="102" column="41" selection-start="3618" selection-end="3618" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2160">
@@ -418,9 +486,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/theTester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="10" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
+          <folding>
+            <marker date="1386502361471" expanded="true" signature="27:118" placeholder="..." />
+            <marker date="1386502361471" expanded="true" signature="135:147" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/THE2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="13" selection-start="2619" selection-end="2619" vertical-scroll-proportion="0.5461422" vertical-offset="1239" max-vertical-offset="1900">
+        <state line="78" column="10" selection-start="2995" selection-end="2995" vertical-scroll-proportion="0.5180723" vertical-offset="1216" max-vertical-offset="1880">
           <folding />
         </state>
       </provider>
