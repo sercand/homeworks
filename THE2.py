@@ -14,7 +14,7 @@ def length(v1, v2): #get distance between two points
 def turn(p, q, r): #get the direction which shows where the vector going on: left, right or none
     return cmp((q[0] - p[0])*(r[1] - p[1]) - (r[0] - p[0])*(q[1] - p[1]), 0)
 
-def keep_left(hull, r):    #find next valid point on convex hull.
+def keep_left(hull, r): #find next valid point on convex hull.
     while len(hull) > 1 and turn(hull[-2], hull[-1], r) != -1 \
         and not compare_numbers(slope(hull[-2],hull[-1]),slope(hull[-1],r)):
             hull.pop()
@@ -38,10 +38,8 @@ def calc_circle(v1,v2,v3):#calculate a circle from 3 points
     return [mx, my, length([mx, my], v1)] #returns x of center, y of center and radius of circle
 
 def check_line(points):#check whether 4 points in a line or not
-    m = slope(points[0], points[1]) #calculate slope of first two points
-    for i in range(1,len(points)-1): #check slope of other points with first point
-        if not compare_numbers(m, slope(points[i], points[i+1])): return False #slope is different so this is not a line
-    return True #this is a line
+    m1, m2, m3 = slope(points[0], points[1]), slope(points[0], points[2]), slope(points[0], points[3])
+    return compare_numbers(m1, m2) and compare_numbers(m1, m3)
 
 def check_circle(points):#check if 4 points in a circle. Points must be CCW order
     circle = calc_circle(points[0], points[1], points[2]) #calculate circle
