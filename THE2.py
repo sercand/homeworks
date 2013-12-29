@@ -5,7 +5,7 @@ def compare(n1, n2):
     return (inf == n1 and inf == n2) or (fabs(n1-n2) <= 0.0001)
 
 def slope(v1, v2):
-    if fabs(v1[0] - v2[0]) <= 0.000001: return inf
+    if fabs(v1[0] - v2[0]) <= 0.0000001: return inf
     return (v1[1] - v2[1]) / (v1[0] - v2[0])
 
 def length(v1, v2):

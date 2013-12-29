@@ -26,10 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="THE2.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="THE2.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/THE2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="1" selection-start="1041" selection-end="1990" vertical-scroll-proportion="0.5714286" vertical-offset="0" max-vertical-offset="860">
+            <state line="33" column="21" selection-start="1533" selection-end="1533" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="780">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="temp.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/temp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="16" selection-start="300" selection-end="300" vertical-scroll-proportion="0.46620047" vertical-offset="0" max-vertical-offset="858">
               <folding />
             </state>
           </provider>
@@ -54,8 +63,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/convex_hull.py" />
+        <option value="$PROJECT_DIR$/CircleCreator.py" />
+        <option value="$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/__builtin__.py" />
         <option value="$PROJECT_DIR$/theTester.py" />
+        <option value="$PROJECT_DIR$/the2_zafer.py" />
         <option value="$PROJECT_DIR$/THE2.py" />
+        <option value="$PROJECT_DIR$/temp.py" />
       </list>
     </option>
   </component>
@@ -91,7 +104,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -100,18 +112,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="the2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="the2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -124,7 +127,12 @@
       <PyConsoleSettings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.theTester">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Projeler\the2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.temp">
     <configuration default="false" name="THE2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,24 +153,6 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="convex_hull" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="the2" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/convex_hull.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="theTester" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -176,6 +166,62 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="the2" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/theTester.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CircleCreator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="the2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CircleCreator.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="the2_zafer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="the2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/the2_zafer.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="temp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="the2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temp.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -302,16 +348,20 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.THE2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.convex_hull" />
-      <item index="2" class="java.lang.String" itemvalue="Python.theTester" />
+      <item index="1" class="java.lang.String" itemvalue="Python.theTester" />
+      <item index="2" class="java.lang.String" itemvalue="Python.CircleCreator" />
+      <item index="3" class="java.lang.String" itemvalue="Python.the2_zafer" />
+      <item index="4" class="java.lang.String" itemvalue="Python.temp" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.theTester" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.temp" />
         <item index="1" class="java.lang.String" itemvalue="Python.THE2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.convex_hull" />
+        <item index="2" class="java.lang.String" itemvalue="Python.theTester" />
+        <item index="3" class="java.lang.String" itemvalue="Python.the2_zafer" />
+        <item index="4" class="java.lang.String" itemvalue="Python.CircleCreator" />
       </list>
     </recent_temporary>
   </component>
@@ -349,11 +399,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16921455" sideWeight="0.9423077" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17132314" sideWeight="0.67081445" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39954853" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.057692308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -374,20 +424,20 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/THE2.py">
+    <entry file="file://$PROJECT_DIR$/temp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="25" selection-start="3059" selection-end="3059" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1900">
+        <state line="19" column="16" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="540">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/THE2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="27" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1920">
+        <state line="33" column="21" selection-start="1533" selection-end="1533" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="780">
           <folding />
         </state>
       </provider>
@@ -471,21 +521,19 @@
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="527" column="4" selection-start="17470" selection-end="17470" vertical-scroll-proportion="0.33233082" vertical-offset="10319" max-vertical-offset="101980">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theTester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="432" column="24" selection-start="59492" selection-end="59492" vertical-scroll-proportion="13.27189" vertical-offset="0" max-vertical-offset="9200">
-          <folding />
-        </state>
+        <state line="103" column="21" selection-start="3161" selection-end="3161" vertical-scroll-proportion="0.41563785" vertical-offset="1858" max-vertical-offset="101980" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/THE2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="1" selection-start="1041" selection-end="1990" vertical-scroll-proportion="0.5714286" vertical-offset="0" max-vertical-offset="860">
+        <state line="33" column="21" selection-start="1533" selection-end="1533" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="16" selection-start="300" selection-end="300" vertical-scroll-proportion="0.46620047" vertical-offset="0" max-vertical-offset="858">
           <folding />
         </state>
       </provider>
