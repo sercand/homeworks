@@ -9,6 +9,7 @@ def is_tree(obj):
     return False if type(obj) is not list else len(obj) > 3
 
 def change_data(value, data, node):
+    if node[node_data][data] is value: return
     node[node_data][data] = value
     if node[node_is_tree]:
         if data is node_width:
@@ -28,9 +29,7 @@ def change_data(value, data, node):
 
 def solve(tree, result):
     label = get_label(tree)
-    #[label, width, height]
     res_data = [label, default, default]
-    #[res_data, is_tree, nw, sw, se, ne]
     node = [res_data, False, None, None, None, None]
     result.append(res_data)
     if not is_tree(tree):
