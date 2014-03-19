@@ -14,21 +14,21 @@ struct operation{
 operation *first, *temp = 0;
 char seq[SEQ_LENGTH][MAX_GEN] = { 0, 0, 0 }, char_entry;
 int virus, pos;
-void add_op(char code, void(*fuction)())
+void add_op(char code, void(*f)())
 {
 	operation**temp2 = &first;
 	for (; *temp2 != 0; temp2 = &(*temp2)->next){}
 	(*temp2) = (operation*)malloc(sizeof(operation));
 	(*temp2)->code = code;
-	(*temp2)->function = fuction;
+	(*temp2)->function = f;
 	(*temp2)->next = 0;
 }
 void change_base(char * base)
 {
-	if (*base == 'A')		*base = 'G';
-	else if (*base == 'G')	*base = 'A';
-	else if (*base == 'T')	*base = 'C';
-	else if (*base == 'C')	*base = 'T';
+	if (*base == 'A')*base = 'G';
+	else if (*base == 'G')*base = 'A';
+	else if (*base == 'T')*base = 'C';
+	else if (*base == 'C')*base = 'T';
 }
 void mutate()
 {
