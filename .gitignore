@@ -4,3 +4,8 @@
 *.iml
 # Mac OS X stuff...
 .DS_Store
+#Visual Studio stuff..
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
