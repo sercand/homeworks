@@ -58,16 +58,16 @@ void do_next()
 }
 int main(int argc, char ** argv)
 {
-	int i = 0;
-	add_op('M', &mutate);
-	add_op('F', &flip);
-	add_op('J', &join);
-	for (; i < SEQ_LENGTH - 1; i++)
-		scanf("%s", seq[i]);
-	for (i = 0; i < OPERATION_COUNT; i++)
-		do_next();
-	for (i = 0; i < SEQ_LENGTH; i++)
-		printf("%s\n", seq[i]);
+	//int i = 0;
+	//add_op('M', &mutate);
+	//add_op('F', &flip);
+	//add_op('J', &join);
+	//for (; i < SEQ_LENGTH - 1; i++)
+	//	scanf("%s", seq[i]);
+	//for (i = 0; i < OPERATION_COUNT; i++)
+	//	do_next();
+	//for (i = 0; i < SEQ_LENGTH; i++)
+	//	printf("%s\n", seq[i]);
 	return 0;
 }
 /*
