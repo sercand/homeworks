@@ -3,29 +3,23 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
-#define FALSE 0
-#define TRUE 1
 #define bool int
 #define string char*
-bool expression(string c, int start, int *end); /* run an expression such as (x & y) or (x | y) */
+bool expression(string c, int index, int *end); /* run an expression such as (x & y) or (x | y) */
 int resize_input(string c, int n);/* returns new size of input*/
-int index_of_character(int c);
-void init_characters();
-void init_cases();
-void print_result();
-void sort_characters();
+int index_of_character(int c); /*Returns index of character in cases*/
+void init_characters(), init_cases(), print_result(), sort_characters();
 string characters; /* all characters in input*/
 int ** cases; /*an array consist all cases. cases[n][n*n] */
 string input;
 int * results;
-int index_of_test = 0, size_of_characters = 0, size_of_input = 0, size_of_cases = 0;
+int case_number = 0, size_of_characters = 0, size_of_input = 0, size_of_cases = 0;
 
 int main(int argc, char ** argv)
 {
 	int a, i, n = 0;
 	input = (char*)malloc(0);
-	while (1)
-	{
+	while (1){
 		a = getchar();
 		size_of_input++;
 		input = realloc(input, size_of_input*sizeof(char));
@@ -41,46 +35,52 @@ int main(int argc, char ** argv)
 	init_characters();
 	init_cases();
 	for (i = 0; i < size_of_cases; i++){
-		index_of_test = i;
+		case_number = i;
 		results[i] = expression(input, 0, &n);
 	}
 	print_result();
 	return 0;
 }
 
-bool expression(string s, int start, int *end)
+bool expression(string s, int index, int *end)
 {
-	int res1, res2, out, exp;
-	if (s[start] == '-'){
-		return !(expression(s, start + 1, end));
+	int res1, res2, out, next;
+	if (s[index] == '-'){
+		return !(expression(s, index + 1, end));
 	}
-	else if (s[start] == '('){
-		res1 = expression(s, start + 1, &out);
-		exp = s[out];
+	else if (s[index] == '('){
+		res1 = expression(s, index + 1, &out);
+		next = s[out];
+		if (next == ')'){
+			(*end) = out + 1;
+			return res1;
+		}
 		res2 = expression(s, out + 1, &out);
 		(*end) = out + 1;
-		if (exp == '&') return res1 && res2;
-		else if (exp == '|') return res1 || res2;
-		else if (exp == '=') return res1 == res2;
-		else if (exp == '>') return (!res1) || res2;
+		if (next == '&') return res1 && res2;
+		else if (next == '|') return res1 || res2;
+		else if (next == '=') return res1 == res2;
+		else if (next == '>') return (!res1) || res2;
 	}
-	else if (index_of_character(s[start]) > -1){
-		(*end) = start + 1;
-		return cases[index_of_character(s[start])][index_of_test];
+	else if (index_of_character(s[index]) > -1){
+		(*end) = index + 1;
+		return cases[index_of_character(s[index])][case_number];
 	}
-	return FALSE;
+	return 0;
 }
 
 int resize_input(string s, int n)
 {
-	int i = 0, j = 0, t = 0;
+	int i = 0, j = 0, t = 1;
 	string newi;
 	for (; j < n; j++) if (s[j] > 32) i++; /* Count number of invalid chars */
-	newi = malloc(sizeof(char)*(i + 1)); /* Init new init string. +1 is for last element */
+	newi = malloc(sizeof(char)*(i + 3)); /* Init new init string. +3 is for first and last elements */
 	for (j = 0; j < n; j++)	{
 		if (s[j] > 32) newi[t++] = s[j]; /*If cc is bigger than 32 than it is valid*/
 	}
-	newi[t] = 0; /* Don not forget last item*/
+	newi[0] = '(';
+	newi[t] = ')';
+	newi[t+1] = 0;
 	input = newi;
 	return i;
 }
@@ -90,32 +90,27 @@ void init_characters()
 	int i = 0;
 	for (; i < size_of_input; i++){
 		if (islower(input[i]) && index_of_character(input[i]) == -1){
-			size_of_characters++;
-			characters = realloc(characters, size_of_characters*sizeof(char));
+			characters = realloc(characters, (++size_of_characters)*sizeof(char));
 			characters[size_of_characters - 1] = input[i];
 		}
 	}
-	characters = realloc(characters, (size_of_characters + 1)*sizeof(char));
-	characters[size_of_characters] = 0;
 	sort_characters();
 }
 
 void init_cases()
 {
-	int i = 0, j, k, l, m, t = 1;
+	int i = 0, k, l, m, t = 1;
 	cases = (int **)malloc(size_of_characters*sizeof(int*));
 	size_of_cases = 1 << size_of_characters;
 	for (i = 0; i < size_of_characters; i++){
 		cases[i] = (int*)malloc(size_of_cases*sizeof(int));
 	}
 	results = (int*)malloc(size_of_cases*sizeof(int));
-	for (i = 0; i < size_of_characters; i++){
-		j = (size_of_characters - i) - 1;
+	for (i = 0; i < size_of_characters; i++, t = 1){
 		k = 1 << i;
-		t = 1;
 		for (l = 0; l < size_of_cases;)	{
 			for (m = 0; m < k && l < size_of_cases; m++, l++){
-				cases[j][l] = t;
+				cases[(size_of_characters - i) - 1][l] = t;
 			}
 			t = !t;
 		}
