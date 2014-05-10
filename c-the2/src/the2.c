@@ -5,40 +5,39 @@
 #include <ctype.h>
 #define bool int
 #define string char*
-bool expression(string c, int index, int *end); /* run an expression such as (x & y) or (x | y) */
-int resize_input(string c, int n);/* returns new size of input*/
-int index_of_character(int c); /*Returns index of character in cases*/
-void init_characters(), init_cases(), print_result(), sort_characters();
-string characters; /* all characters in input*/
-int ** cases; /*an array consist all cases. cases[n][n*n] */
-string input;
-int * results;
-int case_number = 0, size_of_characters = 0, size_of_input = 0, size_of_cases = 0;
+bool expression(string c, int index, int *end);			/* run an expression such as (x & y) or (x | y) */
+int index_of_character(int c);							/* returns index of character in cases*/
+void init_cases(), print_result(), sort_characters();	/* necessary functions*/
+string characters;										/* all characters in input*/
+int ** cases;											/* an array consist all cases. cases[n][1<<n] */
+string input;											/* input string to process*/
+int * results;											/* all results will be saved to this*/
+int case_number = 0, size_of_characters = 0, size_of_input = 2, size_of_cases = 0;
 
 int main(int argc, char ** argv)
 {
-	int a, i, n = 0;
-	input = (char*)malloc(0);
-	while (1){
-		a = getchar();
-		size_of_input++;
-		input = realloc(input, size_of_input*sizeof(char));
-		if (a != EOF){
-			input[size_of_input - 1] = a;
-		}
-		else{
-			input[size_of_input - 1] = 0;
-			break;
+	int a = 0, n = 0, t = 1;
+	input = (char*)malloc(sizeof(char)*size_of_input);
+	input[0] = '(';			/*it is a small bug in algorithm so every input must be in (***) */
+	while (a != EOF){		/*if a is not EndOfFile than continue*/
+		a = getchar();		/*get next char*/
+		if (a > 32){		/*it is a valid char. Not a space or new line or tab character*/
+			size_of_input++;/*increase input size*/
+			input = realloc(input, size_of_input*sizeof(char));		/* realloc input string*/
+			input[t++] = a; /*save new char*/
+			if (islower(a) && index_of_character(a) == -1){			/*Register character if it is not in character list*/
+				characters = realloc(characters, (++size_of_characters)*sizeof(char)); /*increase character size*/
+				characters[size_of_characters - 1] = a;				/* save new char*/
+			}
 		}
 	}
-	size_of_input = resize_input(input, size_of_input);
-	init_characters();
-	init_cases();
-	for (i = 0; i < size_of_cases; i++){
-		case_number = i;
-		results[i] = expression(input, 0, &n);
+	input[t] = ')';			/*Close brucket which is opened before*/
+	sort_characters();		/*Result must be sorted so sort it*/
+	init_cases();			/*initialize of cases according to characters*/
+	for (case_number = 0; case_number < size_of_cases; case_number++){
+		results[case_number] = expression(input, 0, &n); /*Run case*/
 	}
-	print_result();
+	print_result();			/*job is finished it is time to print it!*/
 	return 0;
 }
 
@@ -67,34 +66,6 @@ bool expression(string s, int index, int *end)
 		return cases[index_of_character(s[index])][case_number];
 	}
 	return 0;
-}
-
-int resize_input(string s, int n)
-{
-	int i = 0, j = 0, t = 1;
-	string newi;
-	for (; j < n; j++) if (s[j] > 32) i++; /* Count number of invalid chars */
-	newi = malloc(sizeof(char)*(i + 3)); /* Init new init string. +3 is for first and last elements */
-	for (j = 0; j < n; j++)	{
-		if (s[j] > 32) newi[t++] = s[j]; /*If cc is bigger than 32 than it is valid*/
-	}
-	newi[0] = '(';
-	newi[t] = ')';
-	newi[t+1] = 0;
-	input = newi;
-	return i;
-}
-
-void init_characters()
-{
-	int i = 0;
-	for (; i < size_of_input; i++){
-		if (islower(input[i]) && index_of_character(input[i]) == -1){
-			characters = realloc(characters, (++size_of_characters)*sizeof(char));
-			characters[size_of_characters - 1] = input[i];
-		}
-	}
-	sort_characters();
 }
 
 void init_cases()
