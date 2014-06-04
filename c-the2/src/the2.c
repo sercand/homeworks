@@ -5,19 +5,23 @@
 #include <ctype.h>
 #define bool int
 #define string char*
-bool expression(string c, int index, int *end);			/* run an expression such as (x & y) or (x | y) */
-int index_of_character(int c);							/* returns index of character in cases*/
-void init_cases(), print_result(), sort_characters();	/* necessary functions*/
-string characters;										/* all characters in input*/
-int ** cases;											/* an array consist all cases. cases[n][1<<n] */
-string input;											/* input string to process*/
-int * results;											/* all results will be saved to this*/
+bool expression(const string c, const int index, int *end);			/* run an expression such as (x & y) or (x | y) */
+int index_of_character(int c);										/* returns index of character in cases*/
+void init_cases(), print_result();									/* necessary functions*/
+string characters;													/* all characters in input*/
+int ** cases;														/* an array consist all cases. cases[n][1<<n] */
+string input;														/* input string to process*/
+int * results;														/* all results will be saved to this*/
 int case_number = 0, size_of_characters = 0, size_of_input = 2, size_of_cases = 0;
-
+int compare(const void * a, const void * b)
+{
+	return (*(int*)a - *(int*)b);
+}
 int main(int argc, char ** argv)
 {
 	int a = 0, n = 0, t = 1;
-	input = (char*)malloc(sizeof(char)*size_of_input);
+	input = (string)malloc(sizeof(char)*size_of_input);
+	characters = (string)malloc(0);
 	input[0] = '(';			/*it is a small bug in algorithm so every input must be in (***) */
 	while (a != EOF){		/*if a is not EndOfFile than continue*/
 		a = getchar();		/*get next char*/
@@ -32,7 +36,7 @@ int main(int argc, char ** argv)
 		}
 	}
 	input[t] = ')';			/*Close brucket which is opened before*/
-	sort_characters();		/*Result must be sorted so sort it*/
+	qsort(characters, size_of_characters, sizeof(char), compare);/*Result must be sorted so sort it*/
 	init_cases();			/*initialize of cases according to characters*/
 	for (case_number = 0; case_number < size_of_cases; case_number++){
 		results[case_number] = expression(input, 0, &n); /*Run case*/
@@ -41,7 +45,7 @@ int main(int argc, char ** argv)
 	return 0;
 }
 
-bool expression(string s, int index, int *end)
+bool expression(const string s, const int index, int *end)
 {
 	int res1, res2, out, next;
 	if (s[index] == '-'){
@@ -108,18 +112,4 @@ int index_of_character(int c)
 		if (characters[i] == c) return i;
 	}
 	return -1;
-}
-
-void sort_characters()
-{
-	int i, j, temp;
-	for (i = 0; i < (size_of_characters - 1); i++){
-		for (j = 0; j < size_of_characters - i - 1; j++){
-			if (characters[j] > characters[j + 1]){
-				temp = characters[j];
-				characters[j] = characters[j + 1];
-				characters[j + 1] = temp;
-			}
-		}
-	}
 }
